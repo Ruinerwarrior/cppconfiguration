@@ -31,7 +31,9 @@ struct database_options
 database_options configure_database_options(const configuration_section& section)
 {
 	database_options options;
-	options.connection_string = section.get_value<std::string>("ConnectionString").value_or("fake_connection_string");
+	options.connection_string = section
+		.get_value<std::string>("ConnectionString")
+		.value_or("fake_connection_string");
 
 	return options;
 }
