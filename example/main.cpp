@@ -30,5 +30,13 @@ int main()
 		.configure<database_options>(database_options::key, &configure)
 		.build();
 
-	auto databaseOptions = option<database_options>::get_value();
+	// using config variable, only locally available
+	auto connectionStringThroughConfig = config
+		.get_section("DatabaseOptions")
+		.value()
+		.get_value<std::string>("ConnectionString")
+		.value_or("fake_connection_string");
+
+	// using previously configured option, globally available
+	auto connectionStringThroughOption = option<database_options>::get_value().connection_string;
 }

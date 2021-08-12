@@ -17,7 +17,7 @@ enable_testing()
 
 option(BUILD_STATIC_LIB "Build the static library" ON)
 option(BUILD_TESTS "Build test programs" OFF)
-option(BUILD_EXAMPLE "Build test programs" OFF)
+option(BUILD_EXAMPLE "Build example programs" OFF)
 
 # Find vcpkg packages
 find_package(nlohmann_json CONFIG REQUIRED)
