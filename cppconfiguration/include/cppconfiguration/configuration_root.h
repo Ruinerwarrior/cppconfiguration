@@ -23,6 +23,12 @@ namespace cppconfiguration
 		}
 
 		template<typename T>
+		std::optional<T> get_value(const char* key)
+		{
+			return m_section.get_value<T>(key);
+		}
+
+		template<typename T>
 		std::optional<T> get_value()
 		{
 			return m_section.get_value<T>();

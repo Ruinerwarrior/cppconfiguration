@@ -4,6 +4,7 @@
   "homepage": "",
   "description": ".",
   "dependencies": [
-    "nlohmann-json"
+    "nlohmann-json",
+    "catch2"
   ]
 }
