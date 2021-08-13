@@ -15,8 +15,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 include(CTest)
 enable_testing()
 
-option(BUILD_STATIC_LIB "Build the static library" ON)
-option(BUILD_TESTS "Build test programs" OFF)
+option(BUILD_STATIC_LIB "Build the static library" OFF)
+option(BUILD_TESTS "Build test programs" TRUE)
 option(BUILD_EXAMPLE "Build example programs" OFF)
 
 # Find vcpkg packages

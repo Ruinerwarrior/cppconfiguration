@@ -23,6 +23,8 @@ database_options configure(const configuration_section& section)
 	return options;
 }
 
+
+
 int main()
 {
 	auto config = configuration_builder()

@@ -41,4 +41,23 @@ SCENARIO("creating the configuration builder")
 			}
 		}
 	}
+
+	GIVEN("a valid path to a filled json file")
+	{
+		std::filesystem::path path = "appsettings.json";
+
+		REQUIRE(std::filesystem::exists(path));
+		REQUIRE(path.extension() == ".json");
+
+		AND_GIVEN("a key value pair of type string in the json file")
+		{
+			const std::string key = "test";
+
+			THEN("configuration_root should return the value when getting by key")
+			{
+				configuration_root root = builder.build();
+				REQUIRE(!root.get_value<std::string>(key.c_str()).has_value());
+			}
+		}
+	}
 }
